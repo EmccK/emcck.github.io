@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Notion-Hexo - Notion + Elog + Hexo + GitHub Actions + Vercel 博客解决方案</title><meta name="author" content="1874"><meta name="copyright" content="1874"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Notion + Elog + Hexo + GitHub Actions + Vercel 博客解决方案">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Notion-Hexo">
+<meta property="og:url" content="https://notion-hexo.vercel.app/">
+<meta property="og:site_name" content="Notion-Hexo">
+<meta property="og:description" content="Notion + Elog + Hexo + GitHub Actions + Vercel 博客解决方案">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="1874">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://notion-hexo.vercel.app/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Notion-Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-01-07 22:21:45'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Notion-Hexo"><span class="site-name">Notion-Hexo</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/%E5%90%8C%E5%9F%9F%E5%90%8D%E5%86%85%E5%A4%96%E7%BD%91%E6%99%BA%E8%83%BD%E8%B7%AF%E7%94%B1/" title="同域名内外网智能路由"><img class="post-bg" src="https://cn.bing.com/th?id=OHR.NewHavenBridge_EN-US7922266620_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="同域名内外网智能路由"></a></div><div class="recent-post-info"><a class="article-title" href="/%E5%90%8C%E5%9F%9F%E5%90%8D%E5%86%85%E5%A4%96%E7%BD%91%E6%99%BA%E8%83%BD%E8%B7%AF%E7%94%B1/" title="同域名内外网智能路由">同域名内外网智能路由</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-07T21:42:00.000Z" title="发表于 2024-12-08 05:42:00">2024-12-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/">实用教程</a></span></div><div class="content">问题我在内网服务器上部署了一个 Alist 服务（通过 FnOS 的 Docker 环境部署），并通过内网穿透实现外网访问。该服务有一个域名（如 alist.example.com）解析到外网的 FRP 地址。我想实现这样的智能访问：当在内网时直接访问服务器，不经过 FRP；当在外网时则通过 FRP 访问。
+解决方案软路由通过DNS解析指向本地的Nginx服务，Nginx再将请求反向代理到对应的本地IP和端口。
+
+DNS服务：内网已安装iStoreOS软路由（其他openwrt软路由也行），其中默认包含dnsmasq
+Nginx服务：部署在FnOS中，使用1Panel面板的OpenResty进行反向代理，其他反代软件也行
+Alist服务：部署在FnOS的Docker环境中
+
+具体步骤编辑dnsmasq配置首先通过SSH连接到软路由，使用vim或nano编辑/etc/dnsmasq.conf文件，添加如下配置： 
+配置格式为：address=/后接域名alist.example.com，最后是Nginx服务的内网IP地址（本例中为192.168.1.50）
+1address=/alist ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Rime%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/" title="Rime输入法配置"><img class="post-bg" src="https://cn.bing.com/th?id=OHR.MonoTufa_ZH-CN4998806540_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Rime输入法配置"></a></div><div class="recent-post-info"><a class="article-title" href="/Rime%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/" title="Rime输入法配置">Rime输入法配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-05T06:29:00.000Z" title="发表于 2024-12-05 14:29:00">2024-12-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/">实用教程</a></span></div><div class="content">各平台下载Windowslink_preview
+Maclink_preview
+brew安装输入法
+1brew install --cask squirrel
+
+
+brew安装字体包
+1brew install --cask font-lxgw-wenkai
+
+
+IOSlink_preview
+Androidlink_preview
+配置link_preview
+配色方案小狼毫-Windowsweasel.yaml
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151161171181191201211221231241251261271281291301311321 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Navidrome%20%E9%9F%B3%E4%B9%90%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Navidrome 音乐服务器"><img class="post-bg" src="https://cn.bing.com/th?id=OHR.YiPengLanterns_EN-US2889801198_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Navidrome 音乐服务器"></a></div><div class="recent-post-info"><a class="article-title" href="/Navidrome%20%E9%9F%B3%E4%B9%90%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Navidrome 音乐服务器">Navidrome 音乐服务器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-11-15T21:50:00.000Z" title="发表于 2024-11-16 05:50:00">2024-11-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Docker/">Docker</a></span></div><div class="content">介绍
+Github地址link_preview
+官网bookmark
+安装教程bookmark
+搭建步骤创建文件夹1mkdir Navidrome &amp;&amp; cd Navidrome
+
+
+Docker Compose文件1234567891011121314services:  navidrome:    image: deluan/navidrome:latest    ports:      - &quot;4533:4533&quot;    restart: unless-stopped    environment:      ND_SCANSCHEDULE: 1h      ND_LOGLEVEL: info      ND_SESSIONTIMEOUT: 24h      ND_BASEURL: &quot;music.emcck.com&quot;    volumes:      - &quot;./data:/data&quot;      # 这里映射的音乐文件夹, &quot;/path/to/your/music/folder:/music:ro& ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/MySql%E5%AD%A6%E4%B9%A0/" title="MySql学习"><img class="post-bg" src="https://cn.bing.com/th?id=OHR.MontBlancMassif_EN-US3284638409_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySql学习"></a></div><div class="recent-post-info"><a class="article-title" href="/MySql%E5%AD%A6%E4%B9%A0/" title="MySql学习">MySql学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-31T07:51:00.000Z" title="发表于 2024-10-31 15:51:00">2024-10-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a></span></div><div class="content">常用命令合集
+连接数据库
+
+12-- mysql -u 用户名 -p密码 数据库[可选] -P 端口 -h IPmysql -u root -p -P 3307 -h 127.0.0.1
+
+
+
+
+
+数据库
+显示所有数据库
+
+12-- SHOW DATABASES;show databases;
+
+
+
+
+
+使用数据库
+
+12-- USE 数据库名;use practice;
+
+
+
+
+
+查看创建数据库的命令（如何创建的）
+
+12-- SHOW CREATE DATABASE 数据库名;show create database practice;
+
+
+
+
+
+查看当前使用的数据库
+
+12-- SELECT DATABASE();select database();
+
+
+
+
+
+数据表
+查看当前数据库下的所有表
+
+12-- SHOW TABLES;show tables;
+
+
+
+
+
+查看某个表下的所有列
+
+1234567-- DESCRIBE 表名;-- 或者-- SHOW COLUMNS FROM customers;show create table customers;-- 或者desc t ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/TextView%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8B%E5%88%92%E7%BA%BF/" title="TextView自定义下划线"><img class="post-bg" src="https://cn.bing.com/th?id=OHR.ElephantTeacher_EN-US8363933732_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TextView自定义下划线"></a></div><div class="recent-post-info"><a class="article-title" href="/TextView%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8B%E5%88%92%E7%BA%BF/" title="TextView自定义下划线">TextView自定义下划线</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-23T07:34:00.000Z" title="发表于 2024-10-23 15:34:00">2024-10-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Android/">Android</a></span></div><div class="content">方案一：使用LineBackgroundSpan1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768/** * 自定义下划线背景 Span，用于绘制具有自定义颜色、厚度和偏移量的下划线。 * 支持跨多行文本的下划线绘制。 */class CustomUnderlineByLineBackgroundSpan(    private val underlineColor: Int = Color.BLACK,    private val underlineThickness: Float = 5f,    private val underlineOffset: Float = 0f) : LineBackgroundSpan &#123;    override fun drawBackground(        canvas: Canvas,        paint: Paint ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/%E9%80%9A%E8%BF%87SSH%20%E5%AF%86%E9%92%A5%E5%AF%B9%E8%AE%BF%E9%97%AEVPS/" title="通过SSH 密钥对访问VPS"><img class="post-bg" src="https://cn.bing.com/th?id=OHR.ElbePhilharmonic_EN-US8658450086_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="通过SSH 密钥对访问VPS"></a></div><div class="recent-post-info"><a class="article-title" href="/%E9%80%9A%E8%BF%87SSH%20%E5%AF%86%E9%92%A5%E5%AF%B9%E8%AE%BF%E9%97%AEVPS/" title="通过SSH 密钥对访问VPS">通过SSH 密钥对访问VPS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-14T05:48:00.000Z" title="发表于 2024-10-14 13:48:00">2024-10-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">1. 本地生成公钥1ssh-keygen
+
+
+会生成id_rsa和id_rsa.pub两个文件
+2. 获取本地的公钥1cat ~/.ssh/id_rsa.pub
+
+
+3. 将公钥添加到VPS的authorized_keys文件12345# 如果authorized_keys不存在，则先创建吧touch ~/.ssh/authorized_keys# 编辑authorized_keys文件，添加本地公钥vim ~/.ssh/authorized_keys
+
+
+4. 添加完成之后即可不用密码连接VPS通过SSH 密钥对访问VPS
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Linux%E5%BC%80%E5%90%AF%E5%AF%86%E7%A0%81%E8%AE%BF%E9%97%AESSH/" title="Linux开启密码访问SSH"><img class="post-bg" src="https://cn.bing.com/th?id=OHR.AspensColorado_EN-US9105602602_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux开启密码访问SSH"></a></div><div class="recent-post-info"><a class="article-title" href="/Linux%E5%BC%80%E5%90%AF%E5%AF%86%E7%A0%81%E8%AE%BF%E9%97%AESSH/" title="Linux开启密码访问SSH">Linux开启密码访问SSH</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-10-14T05:41:00.000Z" title="发表于 2024-10-14 13:41:00">2024-10-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">开启SSH访问
+检查是否已安装OpenSsh服务器
+
+1sshd -V
+
+
+如果显示了OpenSsh的版本信息，则表示已安装，如果未安装，则先安装
+
+安装OpenSsh服务器
+
+
+对于Debian&#x2F;Ubuntu服务器：
+
+1sudo apt-get install openssh-server
+
+
+对于CentOS&#x2F;RHEL服务器：
+
+1sudo yum install openssh-server
+
+
+启动SSH服务
+
+1sudo service ssh start
+
+
+验证是否已启动
+
+1sudo service ssh status
+
+
+允许密码连接
+使用文本编辑器编辑SSH配置文件
+
+1sudo vim /etc/ssh/sshd_config
+
+
+找到以下行，并去掉注释，重启sshd即可
+
+1# PasswordAuthentication yes
+
+
+允许Root访问和开机启动
+使用文本编辑器编辑SSH配置文件
+
+1sudo vim /etc/ssh/sshd_config
+
+
+在打开的文件中，找到以下行：
+
+1#PermitRootLogin yes
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/%E4%B8%80%E4%B8%AA%E6%A0%87%E5%87%86%E7%9A%84%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E6%A0%BC%E5%BC%8F/" title="一个标准的网络请求格式"><img class="post-bg" src="https://cn.bing.com/th?id=OHR.SkaftafellWaterfall_EN-US3934499773_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一个标准的网络请求格式"></a></div><div class="recent-post-info"><a class="article-title" href="/%E4%B8%80%E4%B8%AA%E6%A0%87%E5%87%86%E7%9A%84%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E6%A0%BC%E5%BC%8F/" title="一个标准的网络请求格式">一个标准的网络请求格式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-26T09:08:00.000Z" title="发表于 2024-09-26 17:08:00">2024-09-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a></span></div><div class="content">基础的网络格式请求1234567GET /path/to/resource HTTP/1.1Host: www.example.comUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8Accept-Language: en-US,en;q=0.5Accept-Encoding: gzip, deflate, brConnection: keep-alive
+
+
+响应123456789101112131415161718HTTP/1.1 200 OKDate: Fri, 27 Sep 2024 12:00:00 GMTServer: Apache/2.4.41 (Unix)Last-Modified: Wed, 25 Sep  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/EditorConfig%E4%BD%BF%E7%94%A8/" title="EditorConfig使用"><img class="post-bg" src="https://cn.bing.com/th?id=OHR.NazareWave_ZH-CN4575182192_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="EditorConfig使用"></a></div><div class="recent-post-info"><a class="article-title" href="/EditorConfig%E4%BD%BF%E7%94%A8/" title="EditorConfig使用">EditorConfig使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-06-15T23:00:00.000Z" title="发表于 2024-06-16 07:00:00">2024-06-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Android/">Android</a></span></div><div class="content">使用方法，一般是在项目的根目录，创建一个.editorconfig 文件
+Compose项目常用的配置123456789# noinspection EditorConfigKeyCorrectness[*.&#123;kt,kts&#125;]# 参数列表或者列表尾部可以添加,ij_kotlin_allow_trailing_comma=true# 参数列表或者列表尾部可以添加,ij_kotlin_allow_trailing_comma_on_call_site=true# 忽略Composable和Test注解的方法的大小写判断ktlint_function_naming_ignore_when_annotated_with = Composable, Test
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/%E4%B8%8A%E4%BC%A0aar%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" title="上传aar到远程仓库"><img class="post-bg" src="https://cn.bing.com/th?id=OHR.RedFoxDad_ZH-CN4894022141_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="上传aar到远程仓库"></a></div><div class="recent-post-info"><a class="article-title" href="/%E4%B8%8A%E4%BC%A0aar%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" title="上传aar到远程仓库">上传aar到远程仓库</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-06-15T22:26:00.000Z" title="发表于 2024-06-16 06:26:00">2024-06-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Android/">Android</a></span></div><div class="content">bookmark
+使用maven-publish插件在Gradle7.0以下，可以使用maven插件上传代码，但是在Gradle7.0之后，maven插件就不可用了，需要换成maven-publish插件，下面是maven-publish插件的使用例子
+
+注意：maven-publish插件最低支持Gradle-Tools的版本为**3.6.0，现在的工程一般都在3.6.0**以上了吧
+
+什么都不说了，直接上代码，下面的代码分别是普通的groove文件和Kotlin的kts文件
+新的Gradle KTS的方式123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657plugins &#123;		// 下面两种方式都可以		id(&quot;maven-publish&quot;)		`maven-publish`&#125;android &#123;		...		// 这里是在打包的时候把源码和文档同时上传到Maven仓库		pub ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">1874</div><div class="author-info__description">Notion + Elog + Hexo + GitHub Actions + Vercel 博客解决方案</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LetTTGACO/notion-hexo"><i class="fab fa-github"></i><span>博客仓库地址</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E5%90%8C%E5%9F%9F%E5%90%8D%E5%86%85%E5%A4%96%E7%BD%91%E6%99%BA%E8%83%BD%E8%B7%AF%E7%94%B1/" title="同域名内外网智能路由"><img src="https://cn.bing.com/th?id=OHR.NewHavenBridge_EN-US7922266620_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="同域名内外网智能路由"/></a><div class="content"><a class="title" href="/%E5%90%8C%E5%9F%9F%E5%90%8D%E5%86%85%E5%A4%96%E7%BD%91%E6%99%BA%E8%83%BD%E8%B7%AF%E7%94%B1/" title="同域名内外网智能路由">同域名内外网智能路由</a><time datetime="2024-12-07T21:42:00.000Z" title="发表于 2024-12-08 05:42:00">2024-12-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Rime%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/" title="Rime输入法配置"><img src="https://cn.bing.com/th?id=OHR.MonoTufa_ZH-CN4998806540_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Rime输入法配置"/></a><div class="content"><a class="title" href="/Rime%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE/" title="Rime输入法配置">Rime输入法配置</a><time datetime="2024-12-05T06:29:00.000Z" title="发表于 2024-12-05 14:29:00">2024-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Navidrome%20%E9%9F%B3%E4%B9%90%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Navidrome 音乐服务器"><img src="https://cn.bing.com/th?id=OHR.YiPengLanterns_EN-US2889801198_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Navidrome 音乐服务器"/></a><div class="content"><a class="title" href="/Navidrome%20%E9%9F%B3%E4%B9%90%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Navidrome 音乐服务器">Navidrome 音乐服务器</a><time datetime="2024-11-15T21:50:00.000Z" title="发表于 2024-11-16 05:50:00">2024-11-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/MySql%E5%AD%A6%E4%B9%A0/" title="MySql学习"><img src="https://cn.bing.com/th?id=OHR.MontBlancMassif_EN-US3284638409_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySql学习"/></a><div class="content"><a class="title" href="/MySql%E5%AD%A6%E4%B9%A0/" title="MySql学习">MySql学习</a><time datetime="2024-10-31T07:51:00.000Z" title="发表于 2024-10-31 15:51:00">2024-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/TextView%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8B%E5%88%92%E7%BA%BF/" title="TextView自定义下划线"><img src="https://cn.bing.com/th?id=OHR.ElephantTeacher_EN-US8363933732_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=3840&amp;h=2160&amp;rs=1&amp;c=4" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TextView自定义下划线"/></a><div class="content"><a class="title" href="/TextView%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8B%E5%88%92%E7%BA%BF/" title="TextView自定义下划线">TextView自定义下划线</a><time datetime="2024-10-23T07:34:00.000Z" title="发表于 2024-10-23 15:34:00">2024-10-23</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android/"><span class="card-category-list-name">Android</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Docker/"><span class="card-category-list-name">Docker</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Mac/"><span class="card-category-list-name">Mac</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">基础</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">实用教程</span><span class="card-category-list-count">2</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Docker/" style="font-size: 1.5em; color: #99a9bf">Docker</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 1.23em; color: #999ea6">网络</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.1em; color: #999">数据库</a> <a href="/tags/Windows/" style="font-size: 1.1em; color: #999">Windows</a> <a href="/tags/Gradle/" style="font-size: 1.1em; color: #999">Gradle</a> <a href="/tags/Android/" style="font-size: 1.5em; color: #99a9bf">Android</a> <a href="/tags/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/" style="font-size: 1.37em; color: #99a4b2">实用教程</a> <a href="/tags/Linux/" style="font-size: 1.37em; color: #99a4b2">Linux</a> <a href="/tags/Mac/" style="font-size: 1.23em; color: #999ea6">Mac</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">十月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-01-07T14:21:45.615Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 1874</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
